@@ -1,0 +1,11 @@
+{
+  "name": "namwansoft/yii2-sms-gateway",
+  "require": {
+    "yiisoft/yii2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "namwansoft\\yii2-sms-gateway\\": "src"
+    }
+  }
+}
