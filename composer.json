@@ -1,5 +1,18 @@
 {
   "name": "namwansoft/yii2-sms-gateway",
+  "description": "SMS Gateway For Yii2 Application",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "extension"
+  ],
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "namwansoft",
+      "email": "anusit@nwsoft.dev"
+    }
+  ],
   "require": {
     "yiisoft/yii2": "*"
   },
