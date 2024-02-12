@@ -18,6 +18,14 @@ $arSms = (object) [
     'OtpSecret'     => '',
 ];
 
+```
+
+### ThaiBulkSms
+
+visit site [ThaiBulkSms](https://www.thaibulksms.com/).
+
+```php
+
 $SmsGateway = new \namwansoft\SmsGateway\ThaiBulkSms($arSms);
 
 $SmsGateway->setProxy('ip:port','user:pass');
@@ -29,4 +37,5 @@ $SmsGateway->Send('msisdn',['message' => 'message']);
 $SmsGateway->OTP('msisdn');
 
 $SmsGateway->OTPVerify('token', 'pin');
+
 ```
