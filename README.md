@@ -22,7 +22,7 @@ $arSms = (object) [
 
 ### ThaiBulkSms
 
-visit site [ThaiBulkSms](https://www.thaibulksms.com/){:target="_blank"}
+visit site [ThaiBulkSms](https://www.thaibulksms.com/)
 
 ```php
 
