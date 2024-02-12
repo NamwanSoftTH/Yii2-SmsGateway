@@ -30,15 +30,17 @@ class ThaiBulkSms extends \yii\base\Component
      */
     public function setProxy($host = false, $auth = false)
     {
-        $this->Proxy = (!$host || $auth) ? false : (object) ['host' => $host, 'auth' => $auth];
+        $this->Proxy = (!$host || !$auth) ? false : (object) ['host' => $host, 'auth' => $auth];
     }
 
     public function Credit($force = null)
     {
         $Header = ['Authorization:' . $this->Authorization];
         $cUrl = $this->cUrl('GET', $this->Url . '/credit', $Header);
+        $error = $cUrl['error'];
         $cUrl = $cUrl['remaining_credit'];
         $cUrl['balance'] = ($force) ? $cUrl[$force] : $cUrl['corporate'];
+        $cUrl['error'] = $error;
         return $cUrl;
     }
 
