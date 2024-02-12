@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-composer require namwansoft/yii2-sms-gateway
+composer require namwansoft/yii2-sms-gateway:dev-master
 ```
 
 ## Usage
