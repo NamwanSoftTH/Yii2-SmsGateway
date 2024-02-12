@@ -10,7 +10,7 @@ composer require namwansoft/yii2-sms-gateway:dev-main
 
 ```php
 
-$arSms = (object)[
+$arSms = (object) [
     'sender_name'   => '',
     'key_api'       => '',
     'key_secret'    => '',
