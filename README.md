@@ -39,3 +39,23 @@ $SmsGateway->OTP('msisdn');
 $SmsGateway->OTPVerify('token', 'pin');
 
 ```
+
+### SmsMKT
+
+visit site [SmsMKT](https://smsmkt.com/)
+
+```php
+
+$SmsGateway = new \namwansoft\SmsGateway\SmsMKT($arSms);
+
+$SmsGateway->setProxy('ip:port','user:pass');
+
+$SmsGateway->credit();
+
+$SmsGateway->Send('msisdn',['message' => 'message']);
+
+$SmsGateway->OTP('msisdn');
+
+$SmsGateway->OTPVerify('token', 'pin');
+
+```
