@@ -2,12 +2,15 @@
 
 namespace namwansoft\SmsGateway;
 
-class Index
+class Index extends \yii\base\Component
 {
 
-    public function listProvider()
+    public $listProvider;
+
+    public function __construct()
     {
-        return [
+        parent::__construct();
+        $this->listProvider = [
             'ThaiBulkSms' => 'ThaiBulkSms',
             // 'THSms'       => 'THSms',
             'SmsMKT'      => 'SmsMKT',
@@ -19,21 +22,20 @@ class Index
     {
         switch ($arSms->service) {
             case 'ThaiBulkSms':
-                $Sms = new \namwansoft\SmsGateway\ThaiBulkSms($arSms);
+                return new ThaiBulkSms($arSms);
                 break;
             case 'SmsMKT':
-                $Sms = new \namwansoft\SmsGateway\SmsMKT($arSms);
+                return new SmsMKT($arSms);
                 break;
             case 'THSms':
-                $Sms = new \namwansoft\SmsGateway\THSms($arSms);
+                return new THSms($arSms);
                 break;
             case 'Sms2Pro':
-                $Sms = new \namwansoft\SmsGateway\Sms2Pro($arSms);
+                return new Sms2Pro($arSms);
                 break;
             default:
-                $Sms = false;
         }
-        return $Sms;
+        return false;
     }
 
 }

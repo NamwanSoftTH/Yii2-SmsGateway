@@ -7,12 +7,13 @@ class Sms2Pro extends \yii\base\Component
     private $Url = 'https://portal.sms2pro.com/sms-api';
     private $Authorization;
     private $ApiKey;
-    private $SenderName;
+    private $SenderName, $SenderName2;
     private $Proxy;
 
     public function __construct($ar = null)
     {
         $this->SenderName = $ar->sender_name;
+        $this->SenderName2 = $ar->sender_name2;
         $this->ApiKey = $ar->key_api;
         $this->Authorization = 'Bearer ' . $this->ApiKey;
     }
@@ -55,7 +56,7 @@ class Sms2Pro extends \yii\base\Component
     public function OTP($msisdn)
     {
         $Body['recipient'] = $msisdn;
-        $Body['sender_name'] = 'OTPSMS'; // $Body['sender'] ?? $this->SenderName;
+        $Body['sender_name'] = $this->SenderName2 ?? 'OTPSMS';
         $Body['digit'] = 6;
         $cUrl = $this->cUrl('POST', '/otp-sms/send', $Body);
         $cUrl['token'] = $cUrl['data']['token'];
