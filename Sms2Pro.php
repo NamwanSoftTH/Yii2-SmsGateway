@@ -55,7 +55,7 @@ class Sms2Pro extends \yii\base\Component
     public function OTP($msisdn)
     {
         $Body['recipient'] = $msisdn;
-        $Body['sender_name'] = $Body['sender'] ?? $this->SenderName;
+        $Body['sender_name'] = 'OTPSMS'; // $Body['sender'] ?? $this->SenderName;
         $Body['digit'] = 6;
         $cUrl = $this->cUrl('POST', '/otp-sms/send', $Body);
         $cUrl['token'] = $cUrl['data']['token'];
