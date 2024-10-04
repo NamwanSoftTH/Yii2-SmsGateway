@@ -8,7 +8,7 @@ class SmsMKT extends \yii\base\Component
     private $ApiKey;
     private $ApiSecret;
     private $SenderName;
-    private $Proxy = false;
+    private $Proxy;
 
     public function __construct($ar = null)
     {

@@ -12,7 +12,7 @@ class ThaiBulkSms extends \yii\base\Component
     private $OtpKey;
     private $OtpSecret;
     private $SenderName;
-    private $Proxy = false;
+    private $Proxy;
 
     public function __construct($ar = null)
     {
